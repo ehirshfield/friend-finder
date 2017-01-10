@@ -2,6 +2,10 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 
+var apiRoutes = require("./app/routing/api-routes.js");
+var htmlRoutes = require("./app/routing/html-routes.js");
+
+
 var app = express();
 var PORT = 8080;
 
@@ -27,16 +31,23 @@ var friends = [{
 }];
 
 
+
+//be able to use static files - maybe should change access to only data and public for security?
+app.use(express.static('app'));
+
+//set up route to home
 app.get("/", function(request, response) {
-  response.sendFile(path.join(__dirname, "view.html"));
+  response.sendFile(path.join(__dirname, "app/public/home.html"));
 });
 
+//set up route to survey
 app.get("/survey", function(request, response) {
-  response.sendFile(path.join(__dirname, "survey.html"));
+  response.sendFile(path.join(__dirname, "app/public/survey.html"));
 });
 
-app.get("/api/:friends?", function(request, response) {
-  var chosen = request.params.friends;
+//search for friends - match friends
+app.get("/api/:friends", function(request, response) {
+  var chosen = request.params.friends.name;
 if (chosen) {
     console.log(chosen);
 
@@ -54,7 +65,15 @@ if (chosen) {
   }
 });
 
+app.post("/api/friends", function(request, response) {
+  var newFriend = request.body;
 
+  console.log(newFriend);
+
+  friends.push(newFriend);
+
+  response.json(newFriend);
+});
 
 
 
