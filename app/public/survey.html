@@ -16,7 +16,7 @@
         <h3>
             <b>About You</b>
         </h3>
-        <form>
+        <form class="form">
             <div class="form-group">
                 <label for="name">Name (Required)</label>
                 <input type="text" class="form-control" id="name" placeholder="" required>
@@ -33,8 +33,8 @@
                     <label>You are adventurous with trying new foods</label>
                 </div> 
                 <div class="row col-lg-4">
-                    <select class="form-control" id="question1">
-                        <option value="notChoice" selected>Select an Option</option>
+                    <select class="form-control" id="question1" required>
+                        <option value="">Select an Option</option>
                         <option value=1>1 (Strongly Disagree)</option>
                         <option value=2>2</option>
                         <option value=3>3</option>
@@ -51,8 +51,8 @@
                     <label>You prefer to stay at home on weekends</label>
                 </div> 
                 <div class="row col-lg-4">
-                    <select class="form-control" id="question2">
-                        <option value="notChoice" selected>Select an Option</option>
+                    <select class="form-control" id="question2" required>
+                        <option value="">Select an Option</option>
                         <option value=1>1 (Strongly Disagree)</option>
                         <option value=2>2</option>
                         <option value=3>3</option>
@@ -69,8 +69,8 @@
                     <label>You think excercise is good for the body and soul</label>
                 </div> 
                 <div class="row col-lg-4">
-                    <select class="form-control" id="question3">
-                        <option value="notChoice" selected>Select an Option</option>
+                    <select class="form-control" id="question3" required>
+                        <option value="">Select an Option</option>
                         <option value=1>1 (Strongly Disagree)</option>
                         <option value=2>2</option>
                         <option value=3>3</option>
@@ -87,8 +87,8 @@
                     <label>You are an indivdual who values strong family values</label>
                 </div> 
                 <div class="row col-lg-4">
-                    <select class="form-control" id="question4">
-                        <option value="notChoice" selected>Select an Option</option>
+                    <select class="form-control" id="question4" required>
+                        <option value="">Select an Option</option>
                         <option value=1>1 (Strongly Disagree)</option>
                         <option value=2>2</option>
                         <option value=3>3</option>
@@ -105,8 +105,8 @@
                     <label>Do you prefer city or rural living?</label>
                 </div> 
                 <div class="row col-lg-4">
-                    <select class="form-control" id="question5">
-                        <option value="notChoice" selected>Select an Option</option>
+                    <select class="form-control" id="question5" required>
+                        <option value="">Select an Option</option>
                         <option value=1>1 (Strongly Disagree)</option>
                         <option value=2>2</option>
                         <option value=3>3</option>
@@ -123,8 +123,8 @@
                     <label>Are you a snow or beach person?</label>
                 </div> 
                 <div class="row col-lg-4">
-                    <select class="form-control" id="question6">
-                        <option value="notChoice" selected>Select an Option</option>
+                    <select class="form-control" id="question6" required>
+                        <option value="">Select an Option</option>
                         <option value=1>1 (Strongly Disagree)</option>
                         <option value=2>2</option>
                         <option value=3>3</option>
@@ -141,8 +141,8 @@
                     <label>Water with or without ice?</label>
                 </div> 
                 <div class="row col-lg-4">
-                    <select class="form-control" id="question7">
-                        <option value="notChoice" selected>Select an Option</option>
+                    <select class="form-control" id="question7" required>
+                        <option value="">Select an Option</option>
                         <option value=1>1 (Strongly Disagree)</option>
                         <option value=2>2</option>
                         <option value=3>3</option>
@@ -159,8 +159,8 @@
                     <label>Home fries or hash browns?</label>
                 </div> 
                 <div class="row col-lg-4">
-                    <select class="form-control" id="question8">
-                        <option value="notChoice" selected>Select an Option</option>
+                    <select class="form-control" id="question8" required>
+                        <option value="">Select an Option</option>
                         <option value=1>1 (Strongly Disagree)</option>
                         <option value=2>2</option>
                         <option value=3>3</option>
@@ -177,8 +177,8 @@
                     <label>Burger with mayo or without?</label>
                 </div> 
                 <div class="row col-lg-4">
-                    <select class="form-control" id="question9">
-                        <option value="notChoice" selected>Select an Option</option>
+                    <select class="form-control" id="question9" required>
+                        <option value="">Select an Option</option>
                         <option value=1>1 (Strongly Disagree)</option>
                         <option value=2>2</option>
                         <option value=3>3</option>
@@ -195,8 +195,8 @@
                     <label>Sushi or Sashimi?</label>
                 </div> 
                 <div class="row col-lg-4">
-                    <select class="form-control" id="question10">
-                        <option value="notChoice" selected>Select an Option</option>
+                    <select class="form-control" id="question10" required>
+                        <option value="">Select an Option</option>
                         <option value=1>1 (Strongly Disagree)</option>
                         <option value=2>2</option>
                         <option value=3>3</option>
@@ -206,12 +206,43 @@
                 </div>
             </div>
             <br><br>
-            <button type="submit" class="btn btn-primary btn-lg btn-block" id="addBtn">
+            <button type="submit" class="btn btn-primary btn-lg btn-block" id="addBtn" data-toggle="modal" data-target="#exampleModal">
                 <span class="glyphicon glyphicon-ok"></span>
                 Submit
             </button>
     </div>
+
+
+   
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Your new best friend is: <span id="chosenFriend"></span>!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img height=300px width=300px id="chosenPhoto">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
     
+    <footer>
+        <div class="container">
+            <p>
+                <a href="/api/friends">API Friends List</a>
+                 | 
+                 <a href="https://github.com/ehirshfield/friend-finder">GitHub Repo</a>
+            </p>
+        </div>
+    </footer>
+
     <script src="../data/friends.js"></script>
 </body>
 </html>

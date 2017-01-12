@@ -1,7 +1,7 @@
 {
   "name": "friend-finder",
   "version": "1.0.0",
-  "description": "",
+  "description": "An Express app designed to finally help you find friends!",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/ehirshfield/friend-finder.git"
   },
-  "author": "",
+  "author": "Eric Hirshfield-Yamanishi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ehirshfield/friend-finder/issues"
