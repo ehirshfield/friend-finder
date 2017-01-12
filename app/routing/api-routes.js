@@ -8,15 +8,15 @@ var friends = [{
     name: "Eric",
     photo: "http://www.foodanddine.com/wp-content/uploads/2016/05/Pizza-capricciosa.jpg",
     scores: ["5",
+      "4",
+      "4",
+      "5",
+      "2",
+      "3",
+      "4",
+      "4",
       "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1"]
+      "2"]
     },
     {
       name: "Derrick",
